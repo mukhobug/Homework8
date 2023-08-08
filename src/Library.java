@@ -5,7 +5,7 @@ public class Library {
         library = new Book[size];
     }
 
-    public void addBookToLibrary(Book name) {
+    public void addBook(Book name) {
         for (int i = 0; i < library.length; i++) {
             if (library[i] == null) {
                 library[i] = name;
@@ -39,5 +39,16 @@ public class Library {
                 return;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder net = new StringBuilder("Library:");
+        for (int i = 0; i < library.length; i++) {
+            if (library[i] != null) {
+                net.append("\nBook ").append(i+1).append(library[i]);
+            }
+        }
+        return net.toString();
     }
 }
